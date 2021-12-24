@@ -1,15 +1,70 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ecf0f1;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 16px;
+    padding-top: 330px;
+    transition: padding-top 0.5s ease;
+}
+
+#header {
+    background-color: #f1f1f1;
+    padding: 50px 10px;
+    color: black;
+    text-align: center;
+    font-size: 90px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.2s;
+}
+
+h2 {
+    font-size: 34px;
+    text-transform: uppercase;
+    font-weight: 100;
+    line-height: 2;
+    color: #2c3e50;
+}
+
+p {
+    margin-bottom: 2rem;
+    line-height: 2;
+    color: #7f8c8d;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+}
+
+
+/* Sticky Header Style */
+
+
+/* ---------------------------------------- */
+
+body.sticky-header {
+    padding-top: 100px;
+}
+
+body.sticky-header header {
+    height: 60px;
+    background-color: rgba(52, 152, 219, .9);
+}
+
+body.sticky-header header h1 {
+    scale: 0;
+}
