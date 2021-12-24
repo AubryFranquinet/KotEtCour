@@ -2,15 +2,22 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-// When the user scrolls down 50px from the top of the document, resize the header's font size
-window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        document.getElementById("header").style.fontSize = "0px";
-        document.getElementById("header").style.visibility = "hidden";
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function () { myFunction() };
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
     } else {
-        document.getElementById("header").style.fontSize = "90px";
-        document.getElementById("header").style.visibility = "visible";
+        navbar.classList.remove("sticky");
     }
 }
